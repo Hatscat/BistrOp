@@ -3,12 +3,12 @@ window.onload = init;
 
 function init () {
 
-	var config = get_config();
+	window.conf = get_config(); // global !!!
 
-	config.canvas = document.getElementById("render_canvas");
-	config.canvas.width = config.width;
-	config.canvas.height = config.height;
-	config.ctx = config.canvas.getContext("2d");
+	window.conf.canvas = document.getElementById("render_canvas");
+	window.conf.canvas.width = window.conf.width;
+	window.conf.canvas.height = window.conf.height;
+	window.conf.ctx = window.conf.canvas.getContext("2d");
 	
 }
 

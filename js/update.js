@@ -1,6 +1,6 @@
 "use strict"
 
-function update (config) {
+function update () {
 
 }
 
