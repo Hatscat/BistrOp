@@ -1,6 +1,6 @@
 "use strict"
 
-function getConfig () {
+function get_config () {
 
 	var config = {
 	
@@ -9,8 +9,6 @@ function getConfig () {
 		height: 480,
 		imgs: {}
 	};
-
-	config.imgs = {};
 
 	return config;
 }
