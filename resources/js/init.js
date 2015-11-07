@@ -16,7 +16,7 @@ function init () {
 	window.all.buffer_canvas.height = window.all.height;
 	window.all.ctx = window.all.buffer_canvas.getContext("2d");
 	
-// Start service
+	// Start service
 	window.all.t_service = tetra.service({
 		service: 'local.transaction.engine', namespace: 'ingenico.transaction'
 	}).reset().connect();
@@ -24,8 +24,8 @@ function init () {
 	// TODO: window.all.t_service.disconnect();
 
 	// load bill && imgs
-	//load_data(on_assets_loaded);
-	on_assets_loaded();
+	load_data(on_assets_loaded);
+	//on_assets_loaded();
 
 
 }
@@ -34,13 +34,23 @@ function on_assets_loaded () {
 
 	window.all.bill_data = window.fake_data; // tmp
 
-	for (var i = window.all.imgs.length; i--;) {
+	// split images in sprites
+	for (var i = window.all.imgs_2_load.length; i--;) {
 
-		//window.all.img_2_load[i].name
-		// boucler sur les cols et les rows
-		//window.all.sprites[] = {
-			
-		//}
+		var cols_nb = window.all.imgs_2_load[i].cols_nb;
+		var sprites_nb = cols_nb * window.all.imgs_2_load[i].rows_nb;
+		var w = window.all.imgs[window.all.imgs_2_load[i].name].width / cols_nb;
+		var h = window.all.imgs[window.all.imgs_2_load[i].name].height / window.all.imgs_2_load[i].rows_nb;
+		
+		for (var ii = sprites_nb; ii--;) {
+
+			window.all.sprites[window.all.imgs_2_load[i].name + "_" + ii] = {
+				x: (ii % cols_nb) * w,
+				y: (ii / cols_nb | 0) * h,
+				w: w,
+				h: h
+			}
+		}
 	}
 
 	//init scenes:

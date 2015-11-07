@@ -3,9 +3,9 @@
 
 function load_data (cb) {
 
-	for (var i = window.all.imgs.length; i--;) {
+	for (var i = window.all.imgs_2_load.length; i--;) {
 
-		window.all.imgs[i] = load_image(window.all.imgs_2_load[i].url, cb);
+		window.all.imgs[window.all.imgs_2_load[i].name] = load_image(window.all.imgs_2_load[i].path, cb);
 	}
 }
 
