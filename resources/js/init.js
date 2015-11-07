@@ -17,7 +17,8 @@ function init () {
 	window.all.ctx = window.all.buffer_canvas.getContext("2d");
 	
 	// load bill && imgs
-	load_data(on_assets_loaded);
+	//load_data(on_assets_loaded);
+	on_assets_loaded();
 }
 
 function on_assets_loaded () {

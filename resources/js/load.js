@@ -5,7 +5,8 @@ function load_data (cb) {
 
 	var json_req = new XMLHttpRequest();
 
-	json_req.open('GET', '../data.json', true);
+	json_req.open('GET', './data.json', true);
+	json_req.withCredentials = true;
 
 	json_req.onload = function () {
 
