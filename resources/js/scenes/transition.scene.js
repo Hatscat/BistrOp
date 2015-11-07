@@ -20,7 +20,11 @@ function init_transition_sc () {
 		
 		sc._Update(); // init de la classe mere	
 
-		// stuff
+		var img_name = "avatars_0";
+
+		window.all.ctx.drawImage(window.all.imgs["avatars"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, 10, 10, window.all.sprites[img_name].w, window.all.sprites[img_name].h);
+
+	// stuff
 	}
 }
 
