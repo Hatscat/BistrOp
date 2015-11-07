@@ -3,26 +3,10 @@
 
 function load_data (cb) {
 
-	var json_req = new XMLHttpRequest();
+	for (var i = window.all.imgs.length; i--;) {
 
-	json_req.open('GET', './data.json', true);
-	json_req.withCredentials = true;
-
-	json_req.onload = function () {
-
-		try {
-			window.all.bill = JSON.parse(json_req.response);
-		} catch (e) {
-			console.error("failed to open the data json");
-		}
-
-		for (var i = window.all.imgs.length; i--;) {
-
-			window.all.imgs[i] = load_image(window.all.imgs_2_load[i].url, cb);
-		}
-	};
-
-	json_req.send(null);
+		window.all.imgs[i] = load_image(window.all.imgs_2_load[i].url, cb);
+	}
 }
 
 function load_image (src, cb) {

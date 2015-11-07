@@ -16,20 +16,23 @@ function init () {
 	window.all.buffer_canvas.height = window.all.height;
 	window.all.ctx = window.all.buffer_canvas.getContext("2d");
 	
+// Start service
+	window.all.t_service = tetra.service({
+		service: 'local.transaction.engine', namespace: 'ingenico.transaction'
+	}).reset().connect();
+
+	// TODO: window.all.t_service.disconnect();
+
 	// load bill && imgs
 	//load_data(on_assets_loaded);
 	on_assets_loaded();
 
-	// Start service
-	window.all.t_service = tetra.service({
-		service: 'local.transaction.engine', namespace: 'ingenico.transaction' 
-	}).reset(
-	).connect();
 
-	// TODO: window.all.t_service.disconnect();
 }
 
 function on_assets_loaded () {
+
+	window.all.bill_data = window.fake_data; // tmp
 
 	for (var i = window.all.imgs.length; i--;) {
 
