@@ -7,7 +7,7 @@ function fack()
 	window.all.users.push({ avatar: 4, bill_2_pay: 0, active: true, items: [], can_click: true});
 	window.all.users.push({ avatar: 1, bill_2_pay: 0, active: true, items: [], can_click: true});
 	window.all.users.push({ avatar: 5, bill_2_pay: 0, active: true, items: [], can_click: true});
-	window.all.users.push({ avatar: 5, bill_2_pay: 0, active: true, items: [], can_click: true});
+	window.all.users.push({ avatar: 7, bill_2_pay: 0, active: true, items: [], can_click: true});
 
 	window.all.users[0].items.push({ icon: 1,  name: "biere", nbr: 4, base_price: 5.5, divided: 1, price: 5.5, active: true, can_click: true});
 	window.all.users[0].items.push({ icon: 2,  name: "jambon", nbr: 1, base_price: 12.0, divided: 1, price: 12.0, active: true, can_click: true});
@@ -115,8 +115,9 @@ function init_share_sc () {
 
 
 
-	window.all.ctx.fillStyle = "#0F0"; // TMP
-	window.all.ctx.fillRect(xs, ys, sc.icon_size, sc.icon_size);
+		var img_name = "avatars_" + user.avatar;
+
+		window.all.ctx.drawImage(window.all.imgs["avatars"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, xs, ys, sc.icon_size, sc.icon_size);
 
 	text = user.bill_2_pay + "E";
 	if (index == window.all.selected_user)
@@ -155,8 +156,12 @@ sc.draw_item = function(x, y, item, index)
 	else
 		item.can_click = true;
 
-	window.all.ctx.fillStyle = "#00F";
-	window.all.ctx.fillRect(xs, ys, sc.icon_size, sc.icon_size);
+		var img_name = "items_" + item.icon;
+
+		window.all.ctx.drawImage(window.all.imgs["items"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, xs, ys, window.all.sprites[img_name].w, window.all.sprites[img_name].h);
+
+//	window.all.ctx.fillStyle = "#00F";
+//	window.all.ctx.fillRect(xs, ys, sc.icon_size, sc.icon_size);
 
 	/**** TODO FEATURES: degrader ****/
 	text = item.price + "E";
