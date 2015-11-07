@@ -1,11 +1,11 @@
 "use strict"
 
-function init_transition_sc () {
+function init_darts_confirm_sc () {
 
 
-	window.all.scenes[window.all.SCENES.TRANSITION.ID] = new Scene(window.all.SCENES.TRANSITION.ID, window.all.SCENES.TRANSITION.BG_COLOR);
+	window.all.scenes[window.all.SCENES.DARTS_CONFIRM.ID] = new Scene(window.all.SCENES.DARTS_CONFIRM.ID, window.all.SCENES.DARTS_CONFIRM.BG_COLOR);
 
-	var sc = window.all.scenes[window.all.SCENES.TRANSITION.ID]; // ref
+	var sc = window.all.scenes[window.all.SCENES.DARTS_CONFIRM.ID]; // ref
 
 	sc.init = function () {
 		
