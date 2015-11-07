@@ -11,6 +11,6 @@ function on_mouse_down (event) {
 }
 
 function on_mouse_up (event) {
-
+	init_transaction(42.42);
 }
 
