@@ -1,0 +1,1 @@
+{"@uri":"http://www.ingenico.com/schemas/web/workflow/1_0","ops":[{"path":"resources","@id":"import"},{"mode":"AMS","@id":"packaging"},{"mode":"Mock-Up","@id":"sign","certificateType":"VERTICAL_WEB"}],"targetPath":"bin","@id":"workflow"}

@@ -1,2 +1,5 @@
 # Vim tmp files
 *.swp
+
+package
+package/*
