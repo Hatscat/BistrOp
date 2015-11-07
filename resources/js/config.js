@@ -15,12 +15,24 @@ function get_config () {
 				BG_COLOR: "#28F"
 			}
 		},
+		imgs_2_load: [
+			{
+				name: "avatars",
+				path: "../img/avatars.png",
+				cols_nb: 4,
+				rows_nb: 3
+			}
+		],
 		width: 320,
 		height: 480,
 		old_time: 0,
 		delta_time: 1,
+		bill_total: 0,
+		bill_avg: 0,
+
 		scenes: {},
-		imgs: {}
+		sprites: {},
+		users: []
 	};
 
 	return config;

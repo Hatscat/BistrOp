@@ -14,5 +14,9 @@ Scene.prototype._Init = function () {
 Scene.prototype._Update = function () {
 
 	//console.log("update de la scene:", this.id);
+	window.all.ctx.fillStyle = this.bg_color;
+	window.all.ctx.fillRect(0, 0, window.all.width, window.all.height);
+
+
 }
 
