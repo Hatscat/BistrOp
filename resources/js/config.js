@@ -19,13 +19,23 @@ function get_config () {
 			{
 				name: "avatars",
 				path: "./img/avatars.png",
-				cols_nb: 4,
-				rows_nb: 3
+				cols_nb: 19,
+				rows_nb: 5
+			},
+			{
+				name: "items",
+				path: "./img/items.png",
+				cols_nb: 8,
+				rows_nb: 8
 			}
 		],
 		width: 320,
 		height: 480,
-		mouse: {x: 0, y:0, is_down: false},
+		mouse: {
+			x: 0,
+			y: 0,
+			is_down: false
+		},
 		old_time: 0,
 		delta_time: 1,
 		bill_total: 0,
