@@ -29,8 +29,9 @@ function get_config () {
 		delta_time: 1,
 		bill_total: 0,
 		bill_avg: 0,
-
+		loaded_data_nb: 0,
 		scenes: {},
+		imgs: [],
 		sprites: {},
 		users: [],
 
