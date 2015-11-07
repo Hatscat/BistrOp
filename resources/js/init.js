@@ -19,6 +19,14 @@ function init () {
 	// load bill && imgs
 	//load_data(on_assets_loaded);
 	on_assets_loaded();
+
+	// Start service
+	window.all.t_service = tetra.service({
+		service: 'local.transaction.engine', namespace: 'ingenico.transaction' 
+	}).reset(
+	).connect();
+
+	// TODO: window.all.t_service.disconnect();
 }
 
 function on_assets_loaded () {

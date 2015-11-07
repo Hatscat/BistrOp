@@ -33,7 +33,25 @@ function get_config () {
 		scenes: {},
 		imgs: [],
 		sprites: {},
-		users: []
+		users: [],
+
+
+		t_data: {
+			transaction: {
+				currency: {
+					code: 'EUR',
+					numCode: 978,
+					minorUnit: 2,
+					minorUnitSeparator: ",",
+					thousandSeparator: "",
+					position: "CURRENCY_BEFORE_AMOUNT",
+					symbol: "&amp;euro;"
+				},
+				value: 1,
+				transactionType: "Payment"
+			},
+			mean: "CHIP_CARD"
+		}
 	};
 
 	return config;
