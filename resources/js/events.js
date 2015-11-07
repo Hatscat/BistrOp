@@ -8,8 +8,13 @@ function init_events () {
 
 function on_mouse_down (event) {
 
+	window.all.mouse.x = event.clientX;
+	window.all.mouse.y = event.clientY;
+	window.all.mouse.is_down = true;
 }
 
 function on_mouse_up (event) {
+	window.all.mouse.x = event.clientX;
+	window.all.mouse.y = event.clientY;
+	window.all.mouse.is_down = false;
 }
-

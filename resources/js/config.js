@@ -25,6 +25,7 @@ function get_config () {
 		],
 		width: 320,
 		height: 480,
+		mouse: {x: 0, y:0, is_down: false},
 		old_time: 0,
 		delta_time: 1,
 		bill_total: 0,
