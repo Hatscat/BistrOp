@@ -18,7 +18,7 @@ function get_config () {
 		imgs_2_load: [
 			{
 				name: "avatars",
-				path: "../img/avatars.png",
+				path: "./img/avatars.png",
 				cols_nb: 4,
 				rows_nb: 3
 			}
@@ -32,7 +32,7 @@ function get_config () {
 		bill_avg: 0,
 		loaded_data_nb: 0,
 		scenes: {},
-		imgs: [],
+		imgs: {},
 		sprites: {},
 		users: [],
 		selected_user: 0,
