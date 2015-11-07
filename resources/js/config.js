@@ -33,6 +33,7 @@ function get_config () {
 		scenes: {},
 		sprites: {},
 		users: [],
+		selected_user: 0,
 
 
 		t_data: {
