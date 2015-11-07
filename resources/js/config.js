@@ -36,6 +36,7 @@ function get_config () {
 		sprites: {},
 		users: [],
 		selected_user: 0,
+		selected_item: -1,
 
 
 		t_data: {
