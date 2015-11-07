@@ -17,6 +17,8 @@ function get_config () {
 		},
 		width: 320,
 		height: 480,
+		old_time: 0,
+		delta_time: 1,
 		scenes: {},
 		imgs: {}
 	};

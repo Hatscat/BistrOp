@@ -5,12 +5,16 @@ function init () {
 
 	window.all = get_config(); // global !!!
 
+	// set final buffer
+	window.all.final_canvas = document.getElementById("render_canvas");
+	window.all.final_canvas.width = window.all.width;
+	window.all.final_canvas.height = window.all.height;
+	window.all.final_ctx = window.all.final_canvas.getContext("2d");
 	// set buffer
-	
-	window.all.canvas = document.getElementById("render_canvas");
-	window.all.canvas.width = window.all.width;
-	window.all.canvas.height = window.all.height;
-	window.all.ctx = window.all.canvas.getContext("2d");
+	window.all.buffer_canvas = document.createElement("canvas"); // never append
+	window.all.buffer_canvas.width = window.all.width;
+	window.all.buffer_canvas.height = window.all.height;
+	window.all.ctx = window.all.buffer_canvas.getContext("2d");
 	
 	// load imgs
 	

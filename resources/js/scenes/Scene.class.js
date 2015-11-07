@@ -13,6 +13,6 @@ Scene.prototype._Init = function () {
 
 Scene.prototype._Update = function () {
 
-	console.log("update de la scene:", this.id);
+	//console.log("update de la scene:", this.id);
 }
 
