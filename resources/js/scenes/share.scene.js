@@ -58,8 +58,8 @@ function init_share_sc () {
 	sc.border_color = "#666";
 	sc.border_top_size = 20;
 	sc.border_top_ys = 0;
-	sc.border_mid_size = 20;
-	sc.border_mid_ys = window.all.height / 2;
+	sc.border_mid_size = 40;
+	sc.border_mid_ys = window.all.height / 2 - 10;
 	sc.border_down_size =  20;
 	sc.border_down_ys = window.all.height - sc.border_down_size;
 
@@ -160,9 +160,6 @@ sc.draw_item = function(x, y, item, index)
 
 		window.all.ctx.drawImage(window.all.imgs["items"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, xs, ys, window.all.sprites[img_name].w, window.all.sprites[img_name].h);
 
-//	window.all.ctx.fillStyle = "#00F";
-//	window.all.ctx.fillRect(xs, ys, sc.icon_size, sc.icon_size);
-
 	/**** TODO FEATURES: degrader ****/
 	text = item.price + "E";
 
@@ -213,6 +210,8 @@ sc.init = function () {
 		window.all.ctx.fillRect(0, sc.border_top_ys, window.all.width, sc.border_top_size);
 		window.all.ctx.fillRect(0, sc.border_mid_ys, window.all.width, sc.border_mid_size);
 		window.all.ctx.fillRect(0, sc.border_down_ys, window.all.width, sc.border_down_size);
+		window.all.ctx.fillRect(0, 0, 4, window.all.height);
+		window.all.ctx.fillRect(window.all.width - 4, 0, 4, window.all.height);
 
 		var x, y;
 

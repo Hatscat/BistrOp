@@ -12,7 +12,7 @@ function get_config () {
 			},
 			SHARE: {
 				ID: 2,
-				BG_COLOR: "#28F"
+				BG_COLOR: "#FFF"
 			}
 		},
 		imgs_2_load: [
