@@ -184,7 +184,13 @@ Scene.prototype._Draw_inv = function(user)
 	}
 }
 
-Scene.prototype._Draw = function() {
+Scene.prototype._Init = function () {
+	fack();
+	console.log("init de la scene:", this.id);
+}
+
+Scene.prototype._Update = function () {
+
 	window.all.ctx.fillStyle = this.bg_color;
 	window.all.ctx.fillRect(0, 0, window.all.width, window.all.height);
 
@@ -206,18 +212,5 @@ Scene.prototype._Draw = function() {
 				break ;
 		}
 	}
-
-};
-
-Scene.prototype._Init = function () {
-	fack();
-	console.log("init de la scene:", this.id);
-}
-
-Scene.prototype._Update = function () {
-
-	//console.log("update de la scene:", this.id);	this._Draw()
-
-	this._Draw();
 }
 
