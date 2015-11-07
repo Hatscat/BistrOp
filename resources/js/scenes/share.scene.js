@@ -1,6 +1,5 @@
 "use strict"
 
-
 function init_share_sc () {
 
 
@@ -11,14 +10,9 @@ function init_share_sc () {
 	sc.foo = "bar"; // prop
 
 	sc.init = function () {
-		
-		sc._Init(); // init de la classe mere	
-		window.all.ctx.fillStyle = "#F00";
-		window.all.ctx.fillRect(10,10,10,10);
-
-}
+		sc._Init(); // init de la classe mere
+	}
 	sc.update = function () {
-		
 		sc._Update(); // init de la classe mere	
 
 		// stuff
