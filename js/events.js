@@ -2,11 +2,15 @@
 
 function init_events () {
 
-	Window.requestAnimationFrame(loop);
+	window.addEventListener("mousedown", on_mouse_down, false);
+	window.addEventListener("mouseup", on_mouse_up, false);
 }
 
-function loop () {
-	update();
-	draw();
+function on_mouse_down (event) {
+
+}
+
+function on_mouse_up (event) {
+
 }
 
