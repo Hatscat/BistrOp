@@ -9,7 +9,7 @@ window.fake_data = {
 			col: 0,
 			row: 0,
 			amount: 2,
-			unit_price_times_100: 890,
+			unit_price: 8.90,
 		},
 		{
 			name: "Hot-dog",
@@ -17,7 +17,7 @@ window.fake_data = {
 			col: 4,
 			row: 0,
 			amount: 2,
-			unit_price_times_100: 650,
+			unit_price: 6.50,
 		},
 		{
 			name: "Frites",
@@ -25,7 +25,7 @@ window.fake_data = {
 			col: 2,
 			row: 0,
 			amount: 4,
-			unit_price_times_100: 300,
+			unit_price: 3.00,
 		},
 		{
 			name: "Guiness",
@@ -33,7 +33,7 @@ window.fake_data = {
 			col: 3,
 			row: 1,
 			amount: 7,
-			unit_price_times_100: 750
+			unit_price: 7.50
 		},
 		{
 			name: "Bloody mary",
@@ -41,15 +41,15 @@ window.fake_data = {
 			col: 1,
 			row: 1,
 			amount: 1,
-			unit_price_times_100: 850
+			unit_price: 8.50
 		},
 		{
-			name: "Café",
+			name: "Cafe",
 			description: "100% arabica",
 			col: 1,
 			row: 1,
 			amount: 6,
-			unit_price_times_100: 200
+			unit_price: 2.00
 		},
 		{
 			name: "Macaron",
@@ -57,7 +57,7 @@ window.fake_data = {
 			col: 7,
 			row: 3,
 			amount: 2,
-			unit_price_times_100: 890
+			unit_price: 8.90
 		},
 		{
 			name: "Donuts",
@@ -65,7 +65,7 @@ window.fake_data = {
 			col: 3,
 			row: 3,
 			amount: 1,
-			unit_price_times_100: 890
+			unit_price: 8.90
 		},
 		{
 			name: "Le Janis",
@@ -73,8 +73,7 @@ window.fake_data = {
 			col: 6,
 			row: 1,
 			amount: 5,
-			unit_price_times_100: 600
+			unit_price: 6.00
 		},
 	]
-}
-
+};
