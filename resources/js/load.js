@@ -21,12 +21,7 @@ function load_image (src, cb) {
 
 function loaded_content (cb) {
 	
-	console.log('loading: ', window.all.loaded_data_nb + ' / ' + window.all.imgs_2_load.length);
-
 	if (++window.all.loaded_data_nb >= window.all.imgs_2_load.length) {
-
-		console.log('load complete: ', window.all.loaded_data_nb + ' / ' + window.all.imgs_2_load.length);
-
 		cb();
 	}
 }

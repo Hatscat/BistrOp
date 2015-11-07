@@ -48,9 +48,9 @@ function get_next_item()
 function init_share_sc () {
 
 
-	window.all.scenes.share = new Scene(window.all.SCENES.SHARE.ID, window.all.SCENES.SHARE.BG_COLOR);
+	window.all.scenes[window.all.SCENES.SHARE.ID] = new Scene(window.all.SCENES.SHARE.ID, window.all.SCENES.SHARE.BG_COLOR);
 
-	var sc = window.all.scenes.share; // ref
+	var sc = window.all.scenes[window.all.SCENES.SHARE.ID]; // ref
 
 	sc.foo = "bar"; // prop
 

@@ -55,9 +55,18 @@ function on_assets_loaded () {
 
 	//init scenes:
 	init_transition_sc();
+	init_back_home_sc();
+	init_back_confirm_sc();
+	init_front_home_sc();
+	init_front_confirm_sc();
 	init_share_sc();
+	init_games_sc();
+	init_darts_confirm_sc();
+	init_darts_game_sc();
+	init_final_confirm_sc();
+	init_init_transaction_sc();
 	
-	window.all.active_sc = "share";
+	window.all.active_sc = window.all.SCENES.SHARE.ID;
 	
 	window.all.scenes[window.all.active_sc].init();
 

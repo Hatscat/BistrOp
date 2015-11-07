@@ -77,7 +77,7 @@ function get_config () {
 		bill_total: 0,
 		bill_avg: 0,
 		loaded_data_nb: 0,
-		scenes: {},
+		scenes: [],
 		imgs: {},
 		sprites: {},
 		users: [],

@@ -1,13 +1,11 @@
 "use strict"
 
-function init_transition_sc () {
+function init_back_home_sc () {
 
 
-	window.all.scenes.back_home_sc = new Scene(window.all.SCENES.BACK_HOME.ID, window.all.SCENES.BACK_HOME.BG_COLOR);
+	window.all.scenes[window.all.SCENES.BACK_HOME.ID] = new Scene(window.all.SCENES.BACK_HOME.ID, window.all.SCENES.BACK_HOME.BG_COLOR);
 
-	var sc = window.all.scenes.back_home; // ref
-
-	sc.foo = "bar"; // prop
+	var sc = window.all.scenes[window.all.SCENES.BACK_HOME.ID]; // ref
 
 	sc.init = function () {
 		
