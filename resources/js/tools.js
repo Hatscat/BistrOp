@@ -29,11 +29,12 @@ function is_point_left_of_line_AB (Px, Py, Ax, Ay, Bx, By) {
 }
 
 function wait (container, prop_name_to_test, prop_value, time, next) {
-
 	if (container[prop_name_to_test] == prop_value) {
 		next();
 	} else {
-		window.setTimeout(function(){wait(container, prop_name_to_test, prop_value, time, next)}, time);
+		window.setTimeout(function () {
+			wait(container, prop_name_to_test, prop_value, +time || 200, next);
+		}, time);
 	}
 }
 

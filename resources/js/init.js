@@ -16,12 +16,20 @@ function init () {
 	window.all.buffer_canvas.height = window.all.height;
 	window.all.ctx = window.all.buffer_canvas.getContext("2d");
 	
-	// load imgs
-	
-	on_assets_loaded();
+	// load bill && imgs
+	load_data(on_assets_loaded);
 }
 
 function on_assets_loaded () {
+
+	for (var i = window.all.imgs.length; i--;) {
+
+		//window.all.img_2_load[i].name
+		// boucler sur les cols et les rows
+		//window.all.sprites[] = {
+			
+		//}
+	}
 
 	//init scenes:
 	init_transition_sc();
