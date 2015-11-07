@@ -34,19 +34,19 @@ function on_assets_loaded () {
 
 	window.all.bill_data = window.fake_data; // tmp
 
+	// split images in sprites
 	for (var i = window.all.imgs_2_load.length; i--;) {
 
 		var cols_nb = window.all.imgs_2_load[i].cols_nb;
 		var sprites_nb = cols_nb * window.all.imgs_2_load[i].rows_nb;
-		var w = window.all.imgs[window.all.imgs_2_load[i].name].width / window.all.imgs_2_load[i].rows_nb;
-		var h = window.all.imgs[window.all.imgs_2_load[i].name].height / cols_nb;
-
-
+		var w = window.all.imgs[window.all.imgs_2_load[i].name].width / cols_nb;
+		var h = window.all.imgs[window.all.imgs_2_load[i].name].height / window.all.imgs_2_load[i].rows_nb;
+		
 		for (var ii = sprites_nb; ii--;) {
 
 			window.all.sprites[window.all.imgs_2_load[i].name + "_" + ii] = {
 				x: (ii % cols_nb) * w,
-				y: (ii / cols_nb | 0) * w,
+				y: (ii / cols_nb | 0) * h,
 				w: w,
 				h: h
 			}
