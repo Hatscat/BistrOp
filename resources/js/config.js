@@ -12,31 +12,31 @@ function get_config () {
 			},
 			BACK_HOME: {
 				ID: 2,
-				BG_COLOR: "#fff"
+				BG_COLOR: "#eee"
 			},
 			BACK_CONFIRM: {
 				ID: 3,
-				BG_COLOR: "#fff"
+				BG_COLOR: "#afc"
 			},
 			FRONT_HOME: {
 				ID: 4,
-				BG_COLOR: "#fff"
+				BG_COLOR: "#cff"
 			},
 			FRONT_CONFIRM: {
 				ID: 5,
-				BG_COLOR: "#fff"
+				BG_COLOR: "#fcc"
 			},
 			SHARE: {
 				ID: 6,
-				BG_COLOR: "#eef"
+				BG_COLOR: "#acf"
 			},
 			GAMES: {
 				ID: 7,
-				BG_COLOR: "#fff"
+				BG_COLOR: "#caf"
 			},
 			DARTS_CONFIRM: {
 				ID: 8,
-				BG_COLOR: "#fff"
+				BG_COLOR: "#fca"
 			},
 			DARTS_GAME: {
 				ID: 9,
@@ -44,19 +44,19 @@ function get_config () {
 			},
 			FINAL_CONFIRM: {
 				ID: 10,
-				BG_COLOR: "#fff"
+				BG_COLOR: "#fca"
 			},
 			INIT_TRANSACTION: {
 				ID: 11,
-				BG_COLOR: "#fff"
+				BG_COLOR: "#cfc"
 			},
 			SPLIT: {
 				ID: 12,
-				BG_COLOR: "#fff"
+				BG_COLOR: "#ffc"
 			},
 			AVERAGE: {
 				ID: 13,
-				BG_COLOR: "#fff"
+				BG_COLOR: "#faf"
 			}
 		},
 		games: [
