@@ -49,6 +49,10 @@ function get_config () {
 			INIT_TRANSACTION: {
 				ID: 11,
 				BG_COLOR: "#fff"
+			},
+			SPLIT: {
+				ID: 11,
+				BG_COLOR: "#fff"
 			}
 		},
 		imgs_2_load: [
@@ -72,7 +76,8 @@ function get_config () {
 		mouse: {
 			x: 0,
 			y: 0,
-			is_down: false
+			is_down: false,
+			can_click: false
 		},
 		//can_input: true,
 		old_time: 0,

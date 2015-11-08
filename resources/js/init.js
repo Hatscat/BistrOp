@@ -65,6 +65,7 @@ function on_assets_loaded () {
 	init_darts_game_sc();
 	init_final_confirm_sc();
 	init_init_transaction_sc();
+	init_split_sc();
 	
 	window.all.active_sc = window.all.SCENES.SHARE.ID;
 	
