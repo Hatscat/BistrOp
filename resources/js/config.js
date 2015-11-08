@@ -129,7 +129,7 @@ function get_config () {
 		imgs: {},
 		sprites: {},
 		users: [],
-		users_selected: [],
+		previous_scene: 0,
 		selected_user: 0,
 		selected_item: -1,
 
