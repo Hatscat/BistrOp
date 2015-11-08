@@ -44,12 +44,12 @@ window.fake_data = {
 			unit_price: 84.00
 		},
 		{
-			name: "Macaron",
-			description: "Gout banane",
-			col: 7,
-			row: 3,
-			amount: 1,
-			unit_price: 6.00
+			name: "Shots",
+			description: "1 Tournée",
+			col: 0,
+			row: 1,
+			amount: 4,
+			unit_price: 3.00
 		},
 		{
 			name: "Le Janis",
