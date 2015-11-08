@@ -88,23 +88,14 @@ function init_split_sc () {
 			text = "Nombres de " + sc.new_item.name + ":";
 			window.all.ctx.fillText(text, xs - window.all.ctx.measureText(text).width / 2 + sc.box_size / 2, ys - 15);
 
-			window.all.ctx.fillStyle = sc.box_color;
-			window.all.ctx.fillRect(xs, ys, sc.box_size, sc.box_size);
+			var img_name = "plus_moins_0";
 
-			window.all.ctx.fillStyle = sc.box_color;
-			window.all.ctx.fillRect(xs - sc.box_size / 2 - 1, ys, sc.box_size / 2, sc.box_size);
-
-			window.all.ctx.fillStyle = sc.box_color;
-			window.all.ctx.fillRect(xs + sc.box_size + 1, ys, sc.box_size / 2, sc.box_size);
+			window.all.ctx.drawImage(window.all.imgs["plus_moins"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, xs - sc.box_size / 2 - 1, ys, sc.box_size * 2, sc.box_size);
 
 			text = sc.copy_item.amount + "";
 			window.all.ctx.fillStyle = sc.text_color;
 			window.all.ctx.font = "bold " + sc.box_text_size + "px Arial";
 			window.all.ctx.fillText(text, xs + sc.box_size / 2 - window.all.ctx.measureText(text).width / 2, ys + sc.box_size / 2 + window.all.ctx.measureText(text).width / 2);
-			text = "-";
-			window.all.ctx.fillText(text, xs - sc.box_size / 4 - window.all.ctx.measureText(text).width / 2, ys + sc.box_size / 2 + window.all.ctx.measureText(text).width / 2);
-			text = "+";
-			window.all.ctx.fillText(text, xs + sc.box_size + sc.box_size / 4 - window.all.ctx.measureText(text).width / 2, ys + sc.box_size / 2 + window.all.ctx.measureText(text).width / 2);
 
 
 			if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, xs - sc.box_size / 2 - 1, ys, sc.box_size / 2, sc.box_size)
@@ -125,30 +116,19 @@ function init_split_sc () {
 		{
 			ys += sc.box_size + 50;
 
-
 			window.all.ctx.fillStyle = sc.text_color;
 			window.all.ctx.font = "bold " + (sc.box_text_size / 2) + "px Arial";
 			text = "Nombres de payeur: ";
 			window.all.ctx.fillText(text, xs - window.all.ctx.measureText(text).width / 2 + sc.box_size / 2, ys - 15);
 
-			window.all.ctx.fillStyle = sc.box_color;
-			window.all.ctx.fillRect(xs, ys, sc.box_size, sc.box_size);
+			var img_name = "plus_moins_0";
 
-			window.all.ctx.fillStyle = sc.box_color;
-			window.all.ctx.fillRect(xs - sc.box_size / 2 - 1, ys, sc.box_size / 2, sc.box_size);
-
-			window.all.ctx.fillStyle = sc.box_color;
-			window.all.ctx.fillRect(xs + sc.box_size + 1, ys, sc.box_size / 2, sc.box_size);
+			window.all.ctx.drawImage(window.all.imgs["plus_moins"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, xs - sc.box_size / 2 - 1, ys, sc.box_size * 2, sc.box_size);
 
 			text = sc.new_item.amount + "";
 			window.all.ctx.fillStyle = sc.text_color;
 			window.all.ctx.font = "bold " + sc.box_text_size + "px Arial";
 			window.all.ctx.fillText(text, xs + sc.box_size / 2 - window.all.ctx.measureText(text).width / 2, ys + sc.box_size / 2 + window.all.ctx.measureText(text).width / 2);
-			text = "-";
-			window.all.ctx.fillText(text, xs - sc.box_size / 4 - window.all.ctx.measureText(text).width / 2, ys + sc.box_size / 2 + window.all.ctx.measureText(text).width / 2);
-			text = "+";
-			window.all.ctx.fillText(text, xs + sc.box_size + sc.box_size / 4 - window.all.ctx.measureText(text).width / 2, ys + sc.box_size / 2 + window.all.ctx.measureText(text).width / 2);
-
 
 			if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, xs - sc.box_size / 2 - 1, ys, sc.box_size / 2, sc.box_size)
 				&& sc.new_item.amount > 1)
