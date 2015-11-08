@@ -55,7 +55,7 @@ function init_darts_game_sc () {
 				sc.players[sc.players.length] = window.all.users[i];
 			}
 		}
-
+		console.log(sc.players)
 		sc.scores = [];
 		sc.high_score = 0;
 		sc.looser = null;
@@ -134,7 +134,7 @@ function init_darts_game_sc () {
 						}
 					}
 					window.all.selected_users = looser;
-					scenes_transition(window.all.SCENES.DARTS_GAME, window.all.previous_scene);
+					scenes_transition(window.all.SCENES.DARTS_GAME.ID, window.all.SCENES.SHARE.ID);
 				}
 			break
 		}
@@ -174,7 +174,13 @@ function init_darts_game_sc () {
 			window.all.ctx.fillText("Highscore: " + sc.high_score, window.all.width >> 1, window.all.height * 0.85);
 		}
 
-		if (sc.players.length && sc.step == 0) {
+		if (sc.players.length && sc.step == 0 && sc.round_nb < sc.rounds_nb_max) {
+			
+			window.all.ctx.fillStyle = "#000";
+			window.all.ctx.globalAlpha = 0.333;
+			window.all.ctx.fillRect(0, 0, window.all.width, window.all.height);
+			window.all.ctx.globalAlpha = 1;
+
 			var img_name = "avatars_" + sc.players[sc.round_nb].avatar;
 			var w = window.all.sprites[img_name].w * 2;
 			var h = window.all.sprites[img_name].h * 2;
