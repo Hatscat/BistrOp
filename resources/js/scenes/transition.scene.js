@@ -3,11 +3,9 @@
 function init_transition_sc () {
 
 
-	window.all.scenes.transition = new Scene(window.all.SCENES.TRANSITION.ID, window.all.SCENES.TRANSITION.BG_COLOR);
+	window.all.scenes[window.all.SCENES.TRANSITION.ID] = new Scene(window.all.SCENES.TRANSITION.ID, window.all.SCENES.TRANSITION.BG_COLOR);
 
-	var sc = window.all.scenes.transition; // ref
-
-	sc.foo = "bar"; // prop
+	var sc = window.all.scenes[window.all.SCENES.TRANSITION.ID]; // ref
 
 	sc.init = function () {
 		
