@@ -181,6 +181,18 @@ function get_config () {
 				rows_nb: 1
 			},
 			{
+				name: "table",
+				path: "./img/table.png",
+				cols_nb: 1,
+				rows_nb: 1
+			},
+			{
+				name: "plus_moins",
+				path: "./img/plus_moins.png",
+				cols_nb: 1,
+				rows_nb: 1
+			},
+			{
 				name: "target",
 				path: "./img/cible.png",
 				cols_nb: 1,
