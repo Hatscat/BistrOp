@@ -40,7 +40,7 @@ function get_config () {
 			},
 			DARTS_GAME: {
 				ID: 9,
-				BG_COLOR: "#000"
+				BG_COLOR: "#111"
 			},
 			FINAL_CONFIRM: {
 				ID: 10,
@@ -107,7 +107,21 @@ function get_config () {
 				path: "./img/cartes.png",
 				cols_nb: 1,
 				rows_nb: 1
+			},
+			{
+				name: "dart",
+				path: "./img/dart.png",
+				cols_nb: 1,
+				rows_nb: 1
+			},
+			{
+				name: "target",
+				path: "./img/cible.png",
+				cols_nb: 1,
+				rows_nb: 1
 			}
+
+
 		],
 		width: 320,
 		height: 480,
@@ -129,7 +143,7 @@ function get_config () {
 		imgs: {},
 		sprites: {},
 		users: [],
-		users_selected: [],
+		previous_scene: 0,
 		selected_user: 0,
 		selected_item: -1,
 		half_PI: Math.PI * 0.5,

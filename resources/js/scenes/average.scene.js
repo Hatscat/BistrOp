@@ -22,6 +22,6 @@ function init_average_sc () {
 		{
 			window.all.users[i].bill_2_pay = average;
 		}
-			scenes_transition(window.all.SCENES.AVERAGE.ID, window.all.SCENES.INIT_TRANSACTION.ID);
+		scenes_transition(window.all.SCENES.AVERAGE.ID, window.all.SCENES.INIT_TRANSACTION.ID);
 	}
 }
