@@ -6,6 +6,7 @@ function scenes_transition (scene_A_id, scene_B_id, smooth) {
 	
 	window.all.scene_A = window.all.scenes[scene_A_id];
 	window.all.scene_B = window.all.scenes[scene_B_id];
+
 	if (window.all.scene_B.reset) {
 		window.all.scene_B.reset();
 	}

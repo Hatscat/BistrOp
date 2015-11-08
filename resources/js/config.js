@@ -40,7 +40,7 @@ function get_config () {
 			},
 			DARTS_GAME: {
 				ID: 9,
-				BG_COLOR: "#fff"
+				BG_COLOR: "#000"
 			},
 			FINAL_CONFIRM: {
 				ID: 10,
@@ -61,7 +61,7 @@ function get_config () {
 		},
 		games: [
 		{
-			name: "Flechettes",
+			name: "Darts",
 			icon: "flechette",
 			scene_id: 8,
 			bg_color: "#171",
@@ -69,7 +69,7 @@ function get_config () {
 			max_player: -1,
 		},
 		{
-			name: "Cartes",
+			name: "Cards",
 			icon: "cartes",
 			scene_id: 2,
 			bg_color: "#711",
@@ -132,6 +132,7 @@ function get_config () {
 		users_selected: [],
 		selected_user: 0,
 		selected_item: -1,
+		half_PI: Math.PI * 0.5,
 
 
 		t_data: {
