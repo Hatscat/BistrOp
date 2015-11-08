@@ -97,6 +97,72 @@ function get_config () {
 				rows_nb: 8
 			},
 			{
+				name: "back_mid",
+				path: "./img/button/back_mid.png",
+				cols_nb: 3,
+				rows_nb: 1
+			},
+			{
+				name: "confirm_mid",
+				path: "./img/button/confirm_mid.png",
+				cols_nb: 3,
+				rows_nb: 1
+			},
+			{
+				name: "confirm_tier",
+				path: "./img/button/confirm_tier.png",
+				cols_nb: 3,
+				rows_nb: 1
+			},
+			{
+				name: "fleche_droite",
+				path: "./img/button/fleche_droite.png",
+				cols_nb: 3,
+				rows_nb: 1
+			},
+			{
+				name: "fleche_gauche",
+				path: "./img/button/fleche_gauche.png",
+				cols_nb: 3,
+				rows_nb: 1
+			},
+			{
+				name: "game_mid",
+				path: "./img/button/game_mid.png",
+				cols_nb: 3,
+				rows_nb: 1
+			},
+			{
+				name: "game_tier",
+				path: "./img/button/game_tier.png",
+				cols_nb: 3,
+				rows_nb: 1
+			},
+			{
+				name: "moins",
+				path: "./img/button/moins.png",
+				cols_nb: 3,
+				rows_nb: 1
+			},
+			{
+				name: "plus",
+				path: "./img/button/plus.png",
+				cols_nb: 3,
+				rows_nb: 1
+			},
+			{
+				name: "split_mid",
+				path: "./img/button/split_mid.png",
+				cols_nb: 3,
+				rows_nb: 1
+			},
+			{
+				name: "split_tier",
+				path: "./img/button/split_tier.png",
+				cols_nb: 3,
+				rows_nb: 1
+			},
+			{
 				name: "flechette",
 				path: "./img/flechette.png",
 				cols_nb: 1,

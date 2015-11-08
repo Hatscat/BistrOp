@@ -46,7 +46,6 @@ function init_front_confirm_sc () {
 
 
 		{
-			var text = "average";
 			var xs = window.all.width / 2;
 			var ys = 190;
 
@@ -55,16 +54,11 @@ function init_front_confirm_sc () {
 				window.all.mouse.can_click = false;
 				scenes_transition(window.all.SCENES.FRONT_CONFIRM.ID, window.all.SCENES.AVERAGE.ID);
 			}
-
-			window.all.ctx.fillStyle = sc.box_color_average;
-			window.all.ctx.fillRect(xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height);
-
-			window.all.ctx.fillStyle = sc.text_color;
-			window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
-			window.all.ctx.fillText(text, xs - window.all.ctx.measureText(text).width / 2, ys - sc.box_height / 2 + 5);
+			
+			var img_name = "back_mid_2";
+			window.all.ctx.drawImage(window.all.imgs["back_mid"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h,  xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height);
 		}
 		{
-			var text = "share";
 			var xs = window.all.width / 2;
 			var ys = 250;
 
@@ -74,12 +68,9 @@ function init_front_confirm_sc () {
 				scenes_transition(window.all.SCENES.FRONT_CONFIRM.ID, window.all.SCENES.SHARE.ID);
 			}
 
-			window.all.ctx.fillStyle = sc.box_color_share;
-			window.all.ctx.fillRect(xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height);
+			var img_name = "back_mid_2";
+			window.all.ctx.drawImage(window.all.imgs["back_mid"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h,  xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height);
 
-			window.all.ctx.fillStyle = sc.text_color;
-			window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
-			window.all.ctx.fillText(text, xs - window.all.ctx.measureText(text).width / 2, ys - sc.box_height / 2 + 5);
 		}
 		{
 			var text = "back";
@@ -89,15 +80,12 @@ function init_front_confirm_sc () {
 			if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height))
 			{
 				window.all.mouse.can_click = false;
-				scenes_transition(window.all.SCENES.FRONT_CONFIRM.ID, window.all.SCENES.BACK_HOME.ID);
+				scenes_transition(window.all.SCENES.FRONT_CONFIRM.ID, window.all.SCENES.FRONT_HOME.ID);
 			}
 
-			window.all.ctx.fillStyle = sc.box_color_back;
-			window.all.ctx.fillRect(xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height);
+			var img_name = "back_mid_2";
+			window.all.ctx.drawImage(window.all.imgs["back_mid"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height);
 
-			window.all.ctx.fillStyle = sc.text_color;
-			window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
-			window.all.ctx.fillText(text, xs - window.all.ctx.measureText(text).width / 2, ys - sc.box_height / 2 + 5);
 		}
 	}
 }

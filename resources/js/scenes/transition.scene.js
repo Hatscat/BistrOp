@@ -1,4 +1,4 @@
-"use strict"
+	"use strict"
 
 function init_transition_sc () {
 

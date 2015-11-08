@@ -252,6 +252,7 @@ function init_share_sc() {
 					break ;
 			}
 		}
+		var img_name;
 		{
 			/**** SPLIT ****/
 			var text = "Split";
@@ -260,7 +261,7 @@ function init_share_sc() {
 
 			if (window.all.selected_item != -1)
 			{
-				window.all.ctx.fillStyle = sc.split_yep;
+				img_name = "split_tier_1";
 				if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 3, sc.border_down_size))
 				{
 					window.all.mouse.can_click = false;
@@ -268,12 +269,8 @@ function init_share_sc() {
 				}
 			}
 			else
-				window.all.ctx.fillStyle = sc.split_nop;
-			window.all.ctx.fillRect(cx, cy, window.all.width / 3, sc.border_down_size);
-
-			window.all.ctx.fillStyle = sc.text_color;
-			window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
-			window.all.ctx.fillText(text, cx + window.all.width / 6 - window.all.ctx.measureText(text).width / 2, cy + sc.border_down_size / 2 + sc.text_mid_size / 2 - 5);
+				img_name = "split_tier_0";
+			window.all.ctx.drawImage(window.all.imgs["split_tier"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h,  cx, cy, window.all.width / 3, sc.border_down_size);
 		}
 		{
 			/**** GAMES ****/
@@ -283,7 +280,7 @@ function init_share_sc() {
 
 			if (window.all.selected_item != -1)
 			{
-				window.all.ctx.fillStyle = sc.games_yep;
+				img_name = "game_tier_1";
 				if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 3, sc.border_down_size))
 				{
 					window.all.mouse.can_click = false;
@@ -291,12 +288,9 @@ function init_share_sc() {
 				}
 			}
 			else
-				window.all.ctx.fillStyle = sc.games_nop;
-			window.all.ctx.fillRect(cx, cy, window.all.width / 3, sc.border_down_size);
+				img_name = "game_tier_0";
+			window.all.ctx.drawImage(window.all.imgs["game_tier"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h,  cx, cy, window.all.width / 3, sc.border_down_size);
 
-			window.all.ctx.fillStyle = sc.text_color;
-			window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
-			window.all.ctx.fillText(text, cx + window.all.width / 6 - window.all.ctx.measureText(text).width / 2, cy + sc.border_down_size / 2 + sc.text_mid_size / 2 - 5);
 		}
 		{
 			/**** TERMINER ****/
@@ -306,7 +300,7 @@ function init_share_sc() {
 
 			if (window.all.users[0].bill_2_pay == 0)
 			{
-				window.all.ctx.fillStyle = sc.end_yep;
+				img_name = "confirm_tier_1";
 				if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 3, sc.border_down_size))
 				{
 					window.all.mouse.can_click = false;
@@ -314,12 +308,9 @@ function init_share_sc() {
 				}
 			}
 			else
-				window.all.ctx.fillStyle = sc.end_nop;
-			window.all.ctx.fillRect(cx, cy, window.all.width / 3, sc.border_down_size);
+				img_name = "confirm_tier_0";
+			window.all.ctx.drawImage(window.all.imgs["confirm_tier"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h,  cx, cy, window.all.width / 3, sc.border_down_size);
 
-			window.all.ctx.fillStyle = sc.text_color;
-			window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
-			window.all.ctx.fillText(text, cx + window.all.width / 6 - window.all.ctx.measureText(text).width / 2, cy + sc.border_down_size / 2 + sc.text_mid_size / 2 - 5);
 		}
 	}
 }
