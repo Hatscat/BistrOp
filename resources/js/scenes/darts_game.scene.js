@@ -60,6 +60,9 @@ function init_darts_game_sc () {
 		sc.high_score = 0;
 		sc.looser = null;
 
+		window.all.ctx.textAlign = "center";
+		window.all.ctx.textBaseline = "middle";
+
 		sc.init_round();
 	}
 
@@ -105,10 +108,11 @@ function init_darts_game_sc () {
 				sc.dart.x = lerp(sc.dart.start_x, sc.dart.end_x, k);
 				sc.dart.y = lerp(sc.dart.start_y, sc.dart.end_y, k);
 				sc.dart.timer += window.all.delta_time;
+
 			break;
 			case 4: // score
-				window.all.ctx.textAlign = "center";
-				window.all.ctx.textBaseline = "middle";
+				//window.all.ctx.textAlign = "center";
+				//window.all.ctx.textBaseline = "middle";
 
 				var d = Math.sqrt(dist_2d_sqrt(sc.target, { x: sc.dart.x, y: sc.dart.y + sc.dart.r }));
 				var diff = d / Math.sqrt(dist_2d_sqrt(sc.target, { x: sc.dart.start_x, y: sc.dart.start_y }));
@@ -134,6 +138,8 @@ function init_darts_game_sc () {
 						}
 					}
 					window.all.selected_users = looser;
+					window.all.ctx.textAlign = "start";
+					window.all.ctx.textBaseline = "alphabetic";
 					scenes_transition(window.all.SCENES.DARTS_GAME.ID, window.all.SCENES.SHARE.ID);
 				}
 			break
