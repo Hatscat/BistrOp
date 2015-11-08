@@ -122,12 +122,16 @@ function init_share_sc() {
 		window.all.ctx.drawImage(window.all.imgs["avatars"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, xs, ys, sc.icon_size, sc.icon_size);
 
 		text = user.bill_2_pay + "E";
+
+
 		if (index == window.all.selected_user)
 			window.all.ctx.fillStyle = "#0F0";
 		else
 			window.all.ctx.fillStyle = sc.text_color_font;
 
 
+		window.all.ctx.fillRect(xs, ys + sc.icon_size, sc.icon_size + 3, sc.text_size + 4);
+		window.all.ctx.fillStyle = "#FFF";
 		window.all.ctx.fillRect(xs, ys + sc.icon_size, sc.icon_size, sc.text_size + 1);
 		window.all.ctx.fillStyle = sc.text_color;
 		window.all.ctx.font = "bold " + sc.text_size + "px Arial";
@@ -174,7 +178,10 @@ function init_share_sc() {
 		else
 			window.all.ctx.fillStyle = sc.text_color_font;
 
-		window.all.ctx.fillRect(xs, ys + sc.icon_size, sc.icon_size, sc.text_size + 1);
+
+		window.all.ctx.fillRect(xs, ys + sc.icon_size, sc.icon_size + 3, sc.text_size + 4);
+		window.all.ctx.fillStyle = "#FFF";
+		window.all.ctx.fillRect(xs, ys + sc.icon_size, sc.icon_size, sc.text_size);
 		window.all.ctx.fillStyle = sc.text_color;
 		window.all.ctx.fillText(text, xs, ys + sc.icon_size  + sc.text_size);
 		text = "x" + item.amount;
@@ -203,6 +210,19 @@ function init_share_sc() {
 	}
 
 	sc.reset = function () {
+		if (window.all.previous_scene == window.all.SCENES.DARTS_GAME.ID)
+		{
+			var user = window.all.users[window.all.selected_game];
+
+
+			if (!user.items[window.all.selected_item])
+			{
+				user.items[window.all.selected_item] = clone(window.all.users[window.all.selected_user].items[window.all.selected_item]);
+			}
+			else
+				user.items[window.all.selected_item].amount = window.all.users[window.all.selected_user].items[window.all.selected_item].amount;
+			window.all.users[window.all.selected_user].items[window.all.selected_item].amount = 0;
+		}
 	}
 	sc.init = function () {
 		sc._Init(); // init de la classe mere

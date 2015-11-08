@@ -16,9 +16,7 @@ function init_back_home_sc () {
 
 	sc.init = function () {
 		
-		sc._Init(); // init de la classe mere	
-		console.log(window.all.imgs["banniere"]);
-		console.log(window.all.sprites["banniere_0"]);
+		sc._Init(); // init de la classe mere
 		// stuff
 	}
 
@@ -26,8 +24,8 @@ function init_back_home_sc () {
 		
 		sc._Update(); // init de la classe mere	
 
-		var img_name = "banniere_0";
-		window.all.ctx.drawImage(window.all.imgs["banniere"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, 0, 0, window.all.width, window.all.height);
+		var img_name = "table_0";
+		window.all.ctx.drawImage(window.all.imgs["table"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, 0, 0, window.all.width, window.all.height);
 
 		if (window.all.mouse.can_click && window.all.mouse.is_down)
 		{

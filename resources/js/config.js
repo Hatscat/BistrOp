@@ -57,6 +57,10 @@ function get_config () {
 			AVERAGE: {
 				ID: 13,
 				BG_COLOR: "#faf"
+			},
+			ACCUEIL: {
+				ID: 14,
+				BG_COLOR: "#380"
 			}
 		},
 		games: [
@@ -181,6 +185,24 @@ function get_config () {
 				rows_nb: 1
 			},
 			{
+				name: "table",
+				path: "./img/table.png",
+				cols_nb: 1,
+				rows_nb: 1
+			},
+			{
+				name: "plus_moins",
+				path: "./img/plus_moins.png",
+				cols_nb: 1,
+				rows_nb: 1
+			},
+			{
+				name: "logo",
+				path: "./img/logo.png",
+				cols_nb: 1,
+				rows_nb: 1
+			},
+			{
 				name: "target",
 				path: "./img/cible.png",
 				cols_nb: 1,
@@ -211,6 +233,7 @@ function get_config () {
 		users: [],
 		previous_scene: 0,
 		selected_user: 0,
+		selected_game: 0,
 		selected_item: -1,
 		transition_cols_nb: 0,
 		transition_cells_nb: 0,
