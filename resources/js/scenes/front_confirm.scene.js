@@ -11,7 +11,7 @@ function init_front_confirm_sc () {
 	sc.text_size = 20;
 
 	sc.box_width = window.all.width * 0.75;
-	sc.box_height = 40;
+	sc.box_height = 60;
 	sc.box_color_average = "#1C1";
 	sc.box_color_share = "#e2e529";
 	sc.box_color_back = "#C11";
@@ -34,7 +34,7 @@ function init_front_confirm_sc () {
 		window.all.ctx.fillStyle = sc.text_color;
 		window.all.ctx.font = "bold " + sc.text_size + "px Arial";
 
-		var average = window.all.users[0].bill_2_pay / (window.all.users.length - 1);
+		var average =(window.all.users[0].bill_2_pay / (window.all.users.length - 1)).toFixed(2);
 		text = "You're " + (window.all.users.length - 1) + " to share the " + window.all.users[0].bill_2_pay + "E.";
 		window.all.ctx.fillText(text, 10, 50);
 
@@ -47,7 +47,7 @@ function init_front_confirm_sc () {
 
 		{
 			var xs = window.all.width / 2;
-			var ys = 190;
+			var ys = 230;
 
 			if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height))
 			{
@@ -60,7 +60,7 @@ function init_front_confirm_sc () {
 		}
 		{
 			var xs = window.all.width / 2;
-			var ys = 250;
+			var ys = 310;
 
 			if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height))
 			{
@@ -75,7 +75,7 @@ function init_front_confirm_sc () {
 		{
 			var text = "back";
 			var xs = window.all.width / 2;
-			var ys = 310;
+			var ys = 390;
 
 			if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height))
 			{

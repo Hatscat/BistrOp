@@ -67,8 +67,9 @@ function on_assets_loaded () {
 	init_init_transaction_sc();
 	init_split_sc();
 	init_average_sc();
+	init_accueil_sc();
 	
-	window.all.active_sc = window.all.SCENES.BACK_HOME.ID;
+	window.all.active_sc = window.all.SCENES.ACCUEIL.ID;
 	
 	window.all.scenes[window.all.active_sc].init();
 
