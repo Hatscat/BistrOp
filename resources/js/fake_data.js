@@ -1,7 +1,7 @@
 "use strict"
 
 window.fake_data = {
-	"Tb12": [
+	"Tb42": [
 
 		{
 			name: "Hot-dog",
