@@ -211,6 +211,7 @@ function get_config () {
 		users: [],
 		previous_scene: 0,
 		selected_user: 0,
+		selected_game: 0,
 		selected_item: -1,
 		half_PI: Math.PI * 0.5,
 

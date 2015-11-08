@@ -203,6 +203,19 @@ function init_share_sc() {
 	}
 
 	sc.reset = function () {
+		if (window.all.previous_scene == window.all.SCENES.DARTS_GAME.ID)
+		{
+			var user = window.all.users[window.all.selected_game];
+
+
+			if (!user.items[window.all.selected_item])
+			{
+				user.items[window.all.selected_item] = clone(window.all.users[window.all.selected_user].items[window.all.selected_item]);
+			}
+			else
+				user.items[window.all.selected_item].amount = window.all.users[window.all.selected_user].items[window.all.selected_item].amount;
+			window.all.users[window.all.selected_user].items[window.all.selected_item].amount = 0;
+		}
 	}
 	sc.init = function () {
 		sc._Init(); // init de la classe mere
