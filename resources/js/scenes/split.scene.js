@@ -85,7 +85,7 @@ function init_split_sc () {
 
 			window.all.ctx.fillStyle = sc.text_color;
 			window.all.ctx.font = "bold " + (sc.box_text_size / 2) + "px Arial";
-			text = "Nombres de " + sc.new_item.name + ":";
+			text = "Numbers of " + sc.new_item.name + ":";
 			window.all.ctx.fillText(text, xs - window.all.ctx.measureText(text).width / 2 + sc.box_size / 2, ys - 15);
 
 			var img_name = "plus_moins_0";
@@ -118,7 +118,7 @@ function init_split_sc () {
 
 			window.all.ctx.fillStyle = sc.text_color;
 			window.all.ctx.font = "bold " + (sc.box_text_size / 2) + "px Arial";
-			text = "Nombres de payeur: ";
+			text = "Customers number: ";
 			window.all.ctx.fillText(text, xs - window.all.ctx.measureText(text).width / 2 + sc.box_size / 2, ys - 15);
 
 			var img_name = "plus_moins_0";

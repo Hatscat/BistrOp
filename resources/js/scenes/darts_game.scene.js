@@ -20,7 +20,7 @@ function init_darts_game_sc () {
 
 	sc.target = {
 		x: window.all.width >> 1,
-		r: window.all.imgs["target"].width >> 1//window.all.width * 0.45
+		r: window.all.imgs["target"].width >> 1//window.all.width * 0.45f
 	};
 	sc.target.y = sc.target.r;
 
@@ -53,6 +53,7 @@ function init_darts_game_sc () {
 			if (window.all.users[i].active) {
 				++sc.rounds_nb_max;
 				sc.players[sc.players.length] = window.all.users[i];
+				sc.players[sc.players.length - 1].id = i;
 			}
 		}
 		sc.scores = [];
@@ -136,12 +137,12 @@ function init_darts_game_sc () {
 							looser = i;
 						}
 					}
-					window.all.selected_users = looser;
+					window.all.selected_game = sc.players[looser].id;
 					window.all.ctx.textAlign = "start";
 					window.all.ctx.textBaseline = "alphabetic";
 					scenes_transition(window.all.SCENES.DARTS_GAME.ID, window.all.SCENES.SHARE.ID);
 				}
-			break
+			break ;
 		}
 
 		if (sc.can_click && window.all.mouse.is_down == true) {

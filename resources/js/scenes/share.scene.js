@@ -214,6 +214,7 @@ function init_share_sc() {
 	sc.reset = function () {
 		if (window.all.previous_scene == window.all.SCENES.DARTS_GAME.ID)
 		{
+			console.log(window.all.selected_game);
 			var user = window.all.users[window.all.selected_game];
 
 
