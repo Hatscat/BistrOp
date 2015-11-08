@@ -68,7 +68,7 @@ function get_config () {
 			name: "Darts",
 			icon: "flechette",
 			scene_id: 8,
-			bg_color: "#171",
+			bg_color: "#1D1",
 			min_player: 2,
 			max_player: -1,
 		},
@@ -76,7 +76,7 @@ function get_config () {
 			name: "Cards",
 			icon: "cartes",
 			scene_id: 2,
-			bg_color: "#711",
+			bg_color: "#F80",
 			min_player: 2,
 			max_player: -1,
 		}

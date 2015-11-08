@@ -48,7 +48,7 @@ function init_games_sc () {
 			var img_name = game.icon + "_0";
 			text = game.name;
 
-			ys += sc.box_size;
+			ys += sc.box_size + 10;
 			if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, 0, ys - sc.box_size, window.all.width, sc.box_size))
 			{
 				window.all.mouse.can_click = false;
@@ -65,10 +65,10 @@ function init_games_sc () {
 
 		}
 
-		ys += sc.box_size;
+		ys += sc.box_size + 10;
 		text = "BACK";
 		
-		window.all.ctx.fillStyle = "#911";
+		window.all.ctx.fillStyle = "#D11";
 		window.all.ctx.fillRect(0, ys - sc.box_size, window.all.width, sc.box_size);
 
 		if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, 0, ys - sc.box_size, window.all.width, sc.box_size))
