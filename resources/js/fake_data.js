@@ -5,23 +5,23 @@ window.fake_data = {
 
 		{
 			name: "Hot-dog",
-			description: "100% boeuf oignons",
+			description: "100% beef and oinions",
 			col: 4,
 			row: 0,
 			amount: 3,
 			unit_price: 5.50,
 		},
 		{
-			name: "Frites",
-			description: "faites maison",
-			col: 2,
+			name: "French-fries",
+			description: "with salt",
+			col: 1,
 			row: 0,
 			amount: 4,
 			unit_price: 3.00,
 		},
 		{
 			name: "Bloody mary",
-			description: "Tomate, vodka et tabasco",
+			description: "Tomatoes, vodka and tabasco",
 			col: 1,
 			row: 1,
 			amount: 1,
@@ -45,14 +45,14 @@ window.fake_data = {
 		},
 		{
 			name: "Shots",
-			description: "1 Tournée",
+			description: "Shooting Tour",
 			col: 0,
 			row: 1,
 			amount: 4,
 			unit_price: 3.00
 		},
 		{
-			name: "Le Janis",
+			name: "Janis",
 			description: "Milkshake Oreo",
 			col: 6,
 			row: 1,
