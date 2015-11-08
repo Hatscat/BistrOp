@@ -203,6 +203,30 @@ function get_config () {
 				rows_nb: 1
 			},
 			{
+				name: "titre",
+				path: "./img/titre.png",
+				cols_nb: 1,
+				rows_nb: 1
+			},
+			{
+				name: "back",
+				path: "./img/button/back.png",
+				cols_nb: 1,
+				rows_nb: 1
+			},
+			{
+				name: "classic",
+				path: "./img/button/classic.png",
+				cols_nb: 1,
+				rows_nb: 1
+			},
+			{
+				name: "share",
+				path: "./img/button/share.png",
+				cols_nb: 1,
+				rows_nb: 1
+			},
+			{
 				name: "target",
 				path: "./img/cible.png",
 				cols_nb: 1,

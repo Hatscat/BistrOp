@@ -55,8 +55,8 @@ function init_front_confirm_sc () {
 				scenes_transition(window.all.SCENES.FRONT_CONFIRM.ID, window.all.SCENES.AVERAGE.ID);
 			}
 			
-			var img_name = "back_mid_2";
-			window.all.ctx.drawImage(window.all.imgs["back_mid"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h,  xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height);
+			var img_name = "classic_0";
+			window.all.ctx.drawImage(window.all.imgs["classic"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h,  xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height);
 		}
 		{
 			var xs = window.all.width / 2;
@@ -68,8 +68,8 @@ function init_front_confirm_sc () {
 				scenes_transition(window.all.SCENES.FRONT_CONFIRM.ID, window.all.SCENES.SHARE.ID);
 			}
 
-			var img_name = "back_mid_2";
-			window.all.ctx.drawImage(window.all.imgs["back_mid"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h,  xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height);
+			var img_name = "share_0";
+			window.all.ctx.drawImage(window.all.imgs["share"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h,  xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height);
 
 		}
 		{
@@ -83,8 +83,8 @@ function init_front_confirm_sc () {
 				scenes_transition(window.all.SCENES.FRONT_CONFIRM.ID, window.all.SCENES.FRONT_HOME.ID);
 			}
 
-			var img_name = "back_mid_2";
-			window.all.ctx.drawImage(window.all.imgs["back_mid"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height);
+			var img_name = "back_0";
+			window.all.ctx.drawImage(window.all.imgs["back"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, xs - sc.box_width / 2, ys - sc.box_height, sc.box_width, sc.box_height);
 
 		}
 	}
