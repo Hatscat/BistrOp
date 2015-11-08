@@ -9,7 +9,13 @@ function sum_inv_price(items)
 	{
 		count += items[i].unit_price * items[i].amount;
 	}
-	return (count.toFixed(2));
+	count = count.toFixed(2);
+	if (count < 0)
+	{
+		console.log("Les chats son gris !");
+		count = 0;
+	}
+	return (count);
 }
 
 function get_next_item()
