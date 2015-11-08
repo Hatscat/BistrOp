@@ -8,7 +8,7 @@ window.fake_data = {
 			description: "100% boeuf oignons",
 			col: 4,
 			row: 0,
-			amount: 4,
+			amount: 3,
 			unit_price: 5.50,
 		},
 		{
@@ -32,12 +32,12 @@ window.fake_data = {
 			description: "50 cl",
 			col: 3,
 			row: 1,
-			amount: 3,
+			amount: 4,
 			unit_price: 7.50
 		},
 		{
 			name: "St-Emilion",
-			description: "Chateau Beauséjour 2006",
+			description: "Beausejour 2006",
 			col: 2,
 			row: 1,
 			amount: 1,
@@ -45,7 +45,7 @@ window.fake_data = {
 		},
 		{
 			name: "Macaron",
-			description: "Bannane et café",
+			description: "Gout banane",
 			col: 7,
 			row: 3,
 			amount: 1,
@@ -57,7 +57,7 @@ window.fake_data = {
 			col: 6,
 			row: 1,
 			amount: 3,
-			unit_price: 6.00
+			unit_price: 7.00
 		},
 	]
 };
