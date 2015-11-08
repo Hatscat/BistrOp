@@ -12,9 +12,11 @@ function init_transaction(nbr)
 		})
 	.success(function (e)
 	{
+		window.all.user_to_credit++;
 		console.log('All is finished');
 	})
 	.error(function (e){
+		window.all.user_to_credit++;
 		console.log('ERROR: ' + e.response.transactionDetails);
 	});
 }

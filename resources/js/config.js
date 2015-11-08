@@ -51,10 +51,32 @@ function get_config () {
 				BG_COLOR: "#fff"
 			},
 			SPLIT: {
-				ID: 11,
+				ID: 12,
+				BG_COLOR: "#fff"
+			},
+			AVERAGE: {
+				ID: 13,
 				BG_COLOR: "#fff"
 			}
 		},
+		games: [
+		{
+			name: "Flechettes",
+			icon: "flechette",
+			scene_id: 8,
+			bg_color: "#171",
+			min_player: 2,
+			max_player: -1,
+		},
+		{
+			name: "Cartes",
+			icon: "cartes",
+			scene_id: 2,
+			bg_color: "#711",
+			min_player: 2,
+			max_player: -1,
+		}
+		],
 		imgs_2_load: [
 			{
 				name: "avatars",
@@ -63,10 +85,28 @@ function get_config () {
 				rows_nb: 5
 			},
 			{
+				name: "banniere",
+				path: "./img/banniere.png",
+				cols_nb: 1,
+				rows_nb: 1
+			},
+			{
 				name: "items",
 				path: "./img/items.png",
 				cols_nb: 8,
 				rows_nb: 8
+			},
+			{
+				name: "flechette",
+				path: "./img/flechette.png",
+				cols_nb: 1,
+				rows_nb: 1
+			},
+			{
+				name: "cartes",
+				path: "./img/cartes.png",
+				cols_nb: 1,
+				rows_nb: 1
 			}
 		],
 		width: 320,
@@ -89,6 +129,7 @@ function get_config () {
 		imgs: {},
 		sprites: {},
 		users: [],
+		users_selected: [],
 		selected_user: 0,
 		selected_item: -1,
 

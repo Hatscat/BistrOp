@@ -1,17 +1,5 @@
 "use strict"
 
-
-function fack()
-{
-	window.all.users.push({ avatar: 0, bill_2_pay: 0, active: true, items: [], can_click: true});
-	window.all.users.push({ avatar: 4, bill_2_pay: 0, active: true, items: [], can_click: true});
-	window.all.users.push({ avatar: 1, bill_2_pay: 0, active: true, items: [], can_click: true});
-	window.all.users.push({ avatar: 5, bill_2_pay: 0, active: true, items: [], can_click: true});
-	window.all.users.push({ avatar: 7, bill_2_pay: 0, active: true, items: [], can_click: true});
-
-	window.all.users[0].items = window.fake_data.Tb42;
-}
-
 function sum_inv_price(items)
 {
 
@@ -36,7 +24,7 @@ function get_next_item()
 	return (-1);
 }
 
-function init_share_sc () {
+function init_share_sc() {
 
 
 	window.all.scenes[window.all.SCENES.SHARE.ID] = new Scene(window.all.SCENES.SHARE.ID, window.all.SCENES.SHARE.BG_COLOR);
@@ -67,6 +55,8 @@ function init_share_sc () {
 	sc.end_yep = "#0F0";
 	sc.end_ratio = 0.8;
 
+	sc.games_nop = "#D11";
+	sc.games_yep = "#2A2";
 
 	sc.split_nop = "#A00";
 	sc.split_yep = "#e2e529";
@@ -206,11 +196,12 @@ function init_share_sc () {
 		}
 	}
 
-
+	sc.reset = function () {
+	}
 	sc.init = function () {
 		sc._Init(); // init de la classe mere
-		fack();
 	}
+
 	sc.update = function () {
 		sc._Update(); // init de la classe mere	
 
@@ -221,50 +212,6 @@ function init_share_sc () {
 		window.all.ctx.fillRect(0, sc.border_down_ys, window.all.width, sc.border_down_size);
 		window.all.ctx.fillRect(0, 0, 4, window.all.height);
 		window.all.ctx.fillRect(window.all.width - 4, 0, 4, window.all.height);
-
-		/**** TERMINER ****/
-		var text = "confirm";
-		var cx = window.all.width /2;
-		var cy = sc.border_down_ys;
-
-		if (window.all.users[0].bill_2_pay == 0)
-		{
-			window.all.ctx.fillStyle = sc.end_yep;
-			if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 2, sc.border_down_size))
-			{
-				window.all.mouse.can_click = false;
-				console.log("CONFIRM");
-			}
-		}
-		else
-			window.all.ctx.fillStyle = sc.end_nop;
-		window.all.ctx.fillRect(cx, cy, window.all.width /2, sc.border_down_size);
-
-		window.all.ctx.fillStyle = sc.text_color;
-		window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
-		window.all.ctx.fillText(text, cx + window.all.width / 4 - window.all.ctx.measureText(text).width / 2, cy + sc.border_down_size / 2 + sc.text_mid_size / 2 - 5);
-
-		/**** SPLIT ****/
-		text = "Split";
-		cx = 0;
-		cy = sc.border_down_ys;
-
-		if (window.all.selected_item != -1)
-		{
-			window.all.ctx.fillStyle = sc.split_yep;
-			if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 2, sc.border_down_size))
-			{
-				window.all.mouse.can_click = false;
-				scenes_transition(window.all.SCENES.SHARE.ID, window.all.SCENES.SPLIT.ID);
-			}
-		}
-		else
-			window.all.ctx.fillStyle = sc.split_nop;
-		window.all.ctx.fillRect(cx, cy, window.all.width /2, sc.border_down_size);
-
-		window.all.ctx.fillStyle = sc.text_color;
-		window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
-		window.all.ctx.fillText(text, cx + window.all.width / 4 - window.all.ctx.measureText(text).width / 2, cy + sc.border_down_size / 2 + sc.text_mid_size / 2 - 5);
 
 		/**** INFO ****/
 		if (window.all.selected_item != -1)
@@ -305,7 +252,74 @@ function init_share_sc () {
 					break ;
 			}
 		}
+		{
+			/**** SPLIT ****/
+			var text = "Split";
+			var cx = 0;
+			var cy = sc.border_down_ys;
+
+			if (window.all.selected_item != -1)
+			{
+				window.all.ctx.fillStyle = sc.split_yep;
+				if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 3, sc.border_down_size))
+				{
+					window.all.mouse.can_click = false;
+					scenes_transition(window.all.SCENES.SHARE.ID, window.all.SCENES.SPLIT.ID);
+				}
+			}
+			else
+				window.all.ctx.fillStyle = sc.split_nop;
+			window.all.ctx.fillRect(cx, cy, window.all.width / 3, sc.border_down_size);
+
+			window.all.ctx.fillStyle = sc.text_color;
+			window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
+			window.all.ctx.fillText(text, cx + window.all.width / 6 - window.all.ctx.measureText(text).width / 2, cy + sc.border_down_size / 2 + sc.text_mid_size / 2 - 5);
+		}
+		{
+			/**** GAMES ****/
+			var text = "Games";
+			var cx = window.all.width / 3;
+			var cy = sc.border_down_ys;
+
+			if (window.all.selected_item != -1)
+			{
+				window.all.ctx.fillStyle = sc.games_yep;
+				if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 3, sc.border_down_size))
+				{
+					window.all.mouse.can_click = false;
+					scenes_transition(window.all.SCENES.SHARE.ID, window.all.SCENES.GAMES.ID);
+				}
+			}
+			else
+				window.all.ctx.fillStyle = sc.games_nop;
+			window.all.ctx.fillRect(cx, cy, window.all.width / 3, sc.border_down_size);
+
+			window.all.ctx.fillStyle = sc.text_color;
+			window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
+			window.all.ctx.fillText(text, cx + window.all.width / 6 - window.all.ctx.measureText(text).width / 2, cy + sc.border_down_size / 2 + sc.text_mid_size / 2 - 5);
+		}
+		{
+			/**** TERMINER ****/
+			var text = "confirm";
+			var cx = window.all.width / 3 * 2;
+			var cy = sc.border_down_ys;
+
+			if (window.all.users[0].bill_2_pay == 0)
+			{
+				window.all.ctx.fillStyle = sc.end_yep;
+				if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 3, sc.border_down_size))
+				{
+					window.all.mouse.can_click = false;
+					scenes_transition(window.all.SCENES.SHARE.ID, window.all.SCENES.INIT_TRANSACTION.ID);
+				}
+			}
+			else
+				window.all.ctx.fillStyle = sc.end_nop;
+			window.all.ctx.fillRect(cx, cy, window.all.width / 3, sc.border_down_size);
+
+			window.all.ctx.fillStyle = sc.text_color;
+			window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
+			window.all.ctx.fillText(text, cx + window.all.width / 6 - window.all.ctx.measureText(text).width / 2, cy + sc.border_down_size / 2 + sc.text_mid_size / 2 - 5);
+		}
 	}
 }
-
-
