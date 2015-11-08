@@ -67,11 +67,14 @@ function get_config () {
 		],
 		width: 320,
 		height: 480,
+		//width_out: 128,
+		//height_out: 256,
 		mouse: {
 			x: 0,
 			y: 0,
 			is_down: false
 		},
+		//can_input: true,
 		old_time: 0,
 		delta_time: 1,
 		bill_total: 0,
