@@ -212,6 +212,13 @@ function get_config () {
 		previous_scene: 0,
 		selected_user: 0,
 		selected_item: -1,
+		transition_cols_nb: 0,
+		transition_cells_nb: 0,
+		transition_remaining_cells: 0,
+		transition_cells_index: [],
+		transition_cell_i: 0,
+		transition_cells_drawn: undefined,
+		transition_buffer_part_size: 32,
 		half_PI: Math.PI * 0.5,
 
 

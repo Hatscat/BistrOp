@@ -28,6 +28,16 @@ function is_point_left_of_line_AB (Px, Py, Ax, Ay, Bx, By) {
 	return (Bx - Ax) * (Py - Ay) - (By - Ay) * (Px - Ax) > 0;
 }
 
+function shuffle (o) {
+	for (var j, x, i = o.length; i;) {
+		j = Math.random() * i | 0;
+		x = o[--i];
+		o[i] = o[j];
+		o[j] = x;    
+	}
+	return o;
+}
+
 function wait (container, prop_name_to_test, prop_value, time, next) {
 	if (container[prop_name_to_test] == prop_value) {
 		next();

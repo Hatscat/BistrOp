@@ -9,8 +9,13 @@ function run_loop (time) {
 
 	
 	// update
-	window.all.scenes[window.all.active_sc].update();
-	
+	//console.log(window.all.transition_timer, window.all.transition_timer_max)
+	if (window.all.transition_remaining_cells == 0) {
+		window.all.scenes[window.all.active_sc].update();
+	} else {
+		scenes_transition_anim();
+	}
+
 	// draw buffer
 	window.all.final_ctx.drawImage(window.all.buffer_canvas, 0, 0);
 	

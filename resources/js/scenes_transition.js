@@ -1,6 +1,6 @@
 "use strict"
 
-function scenes_transition (scene_A_id, scene_B_id, smooth) {
+function scenes_transition (scene_A_id, scene_B_id, skip_anim) {
 	
 	window.all.active_sc = scene_B_id;
 	
@@ -12,6 +12,53 @@ function scenes_transition (scene_A_id, scene_B_id, smooth) {
 	if (window.all.scene_B.reset) {
 		window.all.scene_B.reset();
 	}
+
+	if (skip_anim) {
+		return;
+	}
+
+	window.all.scene_A_buffer_ctx.drawImage(window.all.buffer_canvas, 0, 0);
+	window.all.scenes[scene_B_id].update();
+	window.all.scene_B_buffer_ctx.drawImage(window.all.buffer_canvas, 0, 0);
+	
+	window.all.transition_cols_nb = window.all.width / window.all.transition_buffer_part_size | 0;
+	window.all.transition_cells_nb = window.all.transition_cols_nb * (window.all.height / window.all.transition_buffer_part_size | 0);
+	window.all.transition_remaining_cells = window.all.transition_cells_nb;
+	var arr = [];
+	for (var i = window.all.transition_cells_nb; i--;) {
+		arr[i] = i;
+	}
+	window.all.transition_cells_index = shuffle(arr);
+	window.all.transition_cell_i = 0;
+	window.all.transition_cells_drawn = new Uint8Array(window.all.transition_cells_nb);
+	window.all.transition_timer = 0;
+
+	window.all.ctx.drawImage(window.all.scene_A_buffer, 0, 0);
+}
+
+function scenes_transition_anim () {
+
+	var size = window.all.transition_buffer_part_size;
+	var c = 0;
+
+	for (var i = 5; i--;) {
+	
+		if (window.all.transition_remaining_cells == 0) {
+			break;
+		}
+		c = window.all.transition_cells_index[window.all.transition_cell_i];
+		++window.all.transition_cell_i;
+		
+		window.all.transition_cells_drawn[c] = 1;
+		--window.all.transition_remaining_cells;
+
+		var x = (c % window.all.transition_cols_nb) * size;
+		var y = (c / window.all.transition_cols_nb | 0) * size;
+
+		window.all.ctx.drawImage(window.all.scene_B_buffer, x, y, size, size, x, y, size, size);
+	}
+}
+
 /*
 	if (!smooth) {
 		sc_transition_end(scene_B_id);
@@ -33,8 +80,8 @@ function scenes_transition (scene_A_id, scene_B_id, smooth) {
 	// step 4: set scene_b items in
 	// step 5: change active scene to scene_B
 	// step 6: re-active inputs
-*/
 }
+*/
 /*
 function sc_transition_end () {
 

@@ -55,7 +55,6 @@ function init_darts_game_sc () {
 				sc.players[sc.players.length] = window.all.users[i];
 			}
 		}
-		console.log(sc.players)
 		sc.scores = [];
 		sc.high_score = 0;
 		sc.looser = null;
@@ -167,9 +166,12 @@ function init_darts_game_sc () {
 		window.all.ctx.fillRect(-sc.vector.w * 0.5, -sc.vector.len, sc.vector.w, sc.vector.len);
 
 		window.all.ctx.restore();
-				
-		window.all.ctx.drawImage(window.all.imgs["dart"], sc.dart.x - sc.dart.r, sc.dart.y - sc.dart.r); 
-
+	
+		window.all.ctx.save();
+		window.all.ctx.translate(sc.dart.x, sc.dart.y);
+		window.all.ctx.rotate(sc.vector.angle);
+		window.all.ctx.drawImage(window.all.imgs["dart"], -sc.dart.r, -sc.dart.r); 
+		window.all.ctx.restore();
 
 		if (sc.scores[sc.round_nb]) {
 			window.all.ctx.fillStyle = "#e00";
@@ -182,14 +184,14 @@ function init_darts_game_sc () {
 
 		if (sc.players.length && sc.step == 0 && sc.round_nb < sc.rounds_nb_max) {
 			
-			window.all.ctx.fillStyle = "#000";
-			window.all.ctx.globalAlpha = 0.333;
+			window.all.ctx.fillStyle = "#222";
+			window.all.ctx.globalAlpha = 0.25;
 			window.all.ctx.fillRect(0, 0, window.all.width, window.all.height);
 			window.all.ctx.globalAlpha = 1;
 
 			var img_name = "avatars_" + sc.players[sc.round_nb].avatar;
-			var w = window.all.sprites[img_name].w * 2;
-			var h = window.all.sprites[img_name].h * 2;
+			var w = window.all.sprites[img_name].w * 3;
+			var h = window.all.sprites[img_name].h * 3;
 			var x = window.all.width * 0.5 - w * 0.5;
 			var y = window.all.height * 0.5 - h * 0.5;
 

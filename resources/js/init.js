@@ -16,6 +16,16 @@ function init () {
 	window.all.buffer_canvas.height = window.all.height;
 	window.all.ctx = window.all.buffer_canvas.getContext("2d");
 	
+	window.all.scene_A_buffer = document.createElement("canvas"); // never append
+	window.all.scene_A_buffer.width = window.all.width;
+	window.all.scene_A_buffer.height = window.all.height;
+	window.all.scene_A_buffer_ctx = window.all.scene_A_buffer.getContext("2d");
+	
+	window.all.scene_B_buffer = document.createElement("canvas"); // never append
+	window.all.scene_B_buffer.width = window.all.width;
+	window.all.scene_B_buffer.height = window.all.height;
+	window.all.scene_B_buffer_ctx = window.all.scene_B_buffer.getContext("2d");
+	
 	// Start service
 	window.all.t_service = tetra.service({
 		service: 'local.transaction.engine', namespace: 'ingenico.transaction'
