@@ -42,7 +42,7 @@ function init_share_sc () {
 	window.all.scenes[window.all.SCENES.SHARE.ID] = new Scene(window.all.SCENES.SHARE.ID, window.all.SCENES.SHARE.BG_COLOR);
 
 	var sc = window.all.scenes[window.all.SCENES.SHARE.ID]; // ref
-
+	sc.id = window.all.SCENES.SHARE.ID;
 	sc.foo = "bar"; // prop
 
 	sc.zone_users_add_x = 0;
@@ -230,8 +230,11 @@ function init_share_sc () {
 		if (window.all.users[0].bill_2_pay == 0)
 		{
 			window.all.ctx.fillStyle = sc.end_yep;
-			if (window.all.mouse.is_down && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 2, sc.border_down_size))
+			if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 2, sc.border_down_size))
+			{
+				window.all.mouse.can_click = false;
 				console.log("CONFIRM");
+			}
 		}
 		else
 			window.all.ctx.fillStyle = sc.end_nop;
@@ -249,8 +252,11 @@ function init_share_sc () {
 		if (window.all.selected_item != -1)
 		{
 			window.all.ctx.fillStyle = sc.split_yep;
-			if (window.all.mouse.is_down && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 2, sc.border_down_size))
-				console.log("CONFIRM");
+			if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 2, sc.border_down_size))
+			{
+				window.all.mouse.can_click = false;
+				scenes_transition(window.all.SCENES.SHARE.ID, window.all.SCENES.SPLIT.ID);
+			}
 		}
 		else
 			window.all.ctx.fillStyle = sc.split_nop;
