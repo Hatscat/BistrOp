@@ -41,7 +41,7 @@ function scenes_transition_anim () {
 	var size = window.all.transition_buffer_part_size;
 	var c = 0;
 
-	for (var i = 5; i--;) {
+	for (var i = 12; i--;) {
 	
 		if (window.all.transition_remaining_cells == 0) {
 			break;

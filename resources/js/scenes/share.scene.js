@@ -116,18 +116,20 @@ function init_share_sc() {
 			user.can_click = true;
 
 
+		if (index == window.all.selected_user) {
+			window.all.ctx.fillStyle = "#0F0";
+			window.all.ctx.fillRect(xs - 4, ys - 4, sc.icon_size + 8, sc.icon_size + sc.text_size + 8);
+		} else {
+			window.all.ctx.fillStyle = sc.text_color_font;
+		}
+
+
 
 		var img_name = "avatars_" + user.avatar;
 
 		window.all.ctx.drawImage(window.all.imgs["avatars"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, xs, ys, sc.icon_size, sc.icon_size);
 
 		text = user.bill_2_pay + "E";
-
-
-		if (index == window.all.selected_user)
-			window.all.ctx.fillStyle = "#0F0";
-		else
-			window.all.ctx.fillStyle = sc.text_color_font;
 
 
 		window.all.ctx.fillRect(xs, ys + sc.icon_size, sc.icon_size + 3, sc.text_size + 4);
@@ -164,6 +166,13 @@ function init_share_sc() {
 		else
 			item.can_click = true;
 
+		if (index == window.all.selected_item) {
+			window.all.ctx.fillStyle = "#0F0";
+			window.all.ctx.fillRect(xs - 4, ys - 4, sc.icon_size + 8, sc.icon_size + sc.text_size + 8);
+		} else {
+			window.all.ctx.fillStyle = sc.text_color_font;
+		}
+
 		var img_name = "items_" + (item.col + item.row * 8);
 
 		window.all.ctx.drawImage(window.all.imgs["items"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, xs, ys, window.all.sprites[img_name].w, window.all.sprites[img_name].h);
@@ -172,13 +181,6 @@ function init_share_sc() {
 		text = item.unit_price + "E";
 
 		window.all.ctx.font = "bold " + sc.text_size + "px Arial";
-
-		if (index == window.all.selected_item)
-			window.all.ctx.fillStyle = "#0F0";
-		else
-			window.all.ctx.fillStyle = sc.text_color_font;
-
-
 		window.all.ctx.fillRect(xs, ys + sc.icon_size, sc.icon_size + 3, sc.text_size + 4);
 		window.all.ctx.fillStyle = "#FFF";
 		window.all.ctx.fillRect(xs, ys + sc.icon_size, sc.icon_size, sc.text_size);
