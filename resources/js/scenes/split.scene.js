@@ -171,43 +171,24 @@ function init_split_sc () {
 		text = "Description: " + sc.new_item.description;
 		window.all.ctx.fillText(text, xs, ys);
 
-		/**** CONFIRM ****/
-		text = "Confirm";
-		var cx = window.all.width /2;
-		var cy = sc.border_down_ys;
 
-		window.all.ctx.fillStyle = sc.confirm_color;
-		if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 2, sc.border_down_size))
+		if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, 0, window.all.height - sc.border_down_size, window.all.width / 2, sc.border_down_size))
 		{
 			window.all.mouse.can_click = false;
+			scenes_transition(window.all.SCENES.FRONT_HOME.ID, window.all.SCENES.SHARE.ID);
+		}
+		var img_name = "back_mid_0";
 
+		window.all.ctx.drawImage(window.all.imgs["back_mid"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h,  0, window.all.height - sc.border_down_size, window.all.width / 2, sc.border_down_size);
+		if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, window.all.width / 2, window.all.height - sc.border_down_size, window.all.width / 2, sc.border_down_size))
+		{
+			window.all.mouse.can_click = false;
 			window.all.users[window.all.selected_user].items[window.all.selected_item].amount -= sc.item_selected.amount;
 			window.all.users[window.all.selected_user].items[window.all.users[window.all.selected_user].items.length] = sc.new_item;
 
 			scenes_transition(window.all.SCENES.SHARE.ID, window.all.SCENES.SHARE.ID);
 		}
-		window.all.ctx.fillRect(cx, cy, window.all.width /2, sc.border_down_size);
-
-		window.all.ctx.fillStyle = sc.text_color;
-		window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
-		window.all.ctx.fillText(text, cx + window.all.width / 4 - window.all.ctx.measureText(text).width / 2, cy + sc.border_down_size / 2 + sc.text_mid_size / 2 - 5);
-
-		/**** CANCEL ****/
-		text = "Cancel";
-		cx = 0;
-		cy = sc.border_down_ys;
-
-		window.all.ctx.fillStyle = sc.cancel_color;
-		if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 2, sc.border_down_size))
-		{
-			window.all.mouse.can_click = false;
-			scenes_transition(window.all.SCENES.SHARE.ID, window.all.SCENES.SHARE.ID);
-		}
-		window.all.ctx.fillRect(cx, cy, window.all.width /2, sc.border_down_size);
-		window.all.ctx.fillStyle = sc.text_color;
-		window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
-		window.all.ctx.fillText(text, cx + window.all.width / 4 - window.all.ctx.measureText(text).width / 2, cy + sc.border_down_size / 2 + sc.text_mid_size / 2 - 5);
-
-	// stuff
-}
+		img_name = "confirm_mid_1"
+		window.all.ctx.drawImage(window.all.imgs["confirm_mid"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h,  window.all.width / 2, window.all.height - sc.border_down_size, window.all.width / 2, sc.border_down_size);
+	}
 }

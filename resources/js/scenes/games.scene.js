@@ -52,7 +52,7 @@ function init_games_sc () {
 			if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, 0, ys - sc.box_size, window.all.width, sc.box_size))
 			{
 				window.all.mouse.can_click = false;
-				scenes_transition(window.all.SCENES.GAMES.ID, game.scene_id);
+				scenes_transition(window.all.SCENES.GAMES.ID, window.all.SCENES.DARTS_CONFIRM.ID);
 			}
 			window.all.ctx.fillStyle = game.bg_color;
 			window.all.ctx.fillRect(0, ys - sc.box_size, window.all.width, sc.box_size);

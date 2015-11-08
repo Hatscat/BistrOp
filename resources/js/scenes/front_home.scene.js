@@ -58,39 +58,30 @@ function init_front_home_sc () {
 			}
 			window.all.ctx.drawImage(window.all.imgs["avatars"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h, xs - sc.icon_size / 2, ys - sc.icon_size / 2, sc.icon_size, sc.icon_size);
 		}
-
-		text = "Back";
-
+/*
 		if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, 0, window.all.height - sc.border_down_size, window.all.width / 2, sc.border_down_size))
 		{
 			window.all.mouse.can_click = false;
-			scenes_transition(window.all.SCENES.FRONT_HOME.ID, window.all.SCENES.BACK_CONFIRM.ID);
+			scenes_transition(window.all.SCENES.FRONT_HOME.ID, window.all.SCENES.BACK_HOME.ID);
 		}
-		window.all.ctx.fillStyle = sc.border_color_nop;
-		window.all.ctx.fillRect(0, window.all.height - sc.border_down_size, window.all.width, sc.border_down_size);
+		var img_name = "back_mid_0";
 
-		window.all.ctx.fillStyle = sc.text_color;
-		window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
-		window.all.ctx.fillText(text, 0 + window.all.width / 4 - window.all.ctx.measureText(text).width / 2, window.all.height - sc.border_down_size / 2 + 5);
-
-
-		text = "Confirm";
-
-		if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, window.all.width / 2, window.all.height - sc.border_down_size, window.all.width / 2, sc.border_down_size))
+		window.all.ctx.drawImage(window.all.imgs["back_mid"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h,  0, window.all.height - sc.border_down_size, window.all.width / 2, sc.border_down_size);
+*/		if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, window.all.width / 2, window.all.height - sc.border_down_size, window.all.width / 2, sc.border_down_size))
 		{
+			window.all.mouse.can_click = false;
+
 			for (var i = 0; i < sc.tab_select.length; ++i)
+			{
 				if (sc.tab_select[i])
 					window.all.users.push({ avatar: i + 1, bill_2_pay: 0, active: false, items: [], can_click: true});
 				window.all.mouse.can_click = false;
 				scenes_transition(window.all.SCENES.FRONT_HOME.ID, window.all.SCENES.FRONT_CONFIRM.ID);
 			}
-			window.all.ctx.fillStyle = sc.border_color_yep;
-			window.all.ctx.fillRect(window.all.width / 2, window.all.height - sc.border_down_size, window.all.width, sc.border_down_size);
-
-			window.all.ctx.fillStyle = sc.text_color;
-			window.all.ctx.font = "bold " + sc.text_mid_size + "px Arial";
-			window.all.ctx.fillText(text, window.all.width / 2 + window.all.width / 4 - window.all.ctx.measureText(text).width / 2, window.all.height - sc.border_down_size / 2 + 5);
 		}
+		img_name = "confirm_mid_1"
+		window.all.ctx.drawImage(window.all.imgs["confirm_mid"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h,  window.all.width / 2, window.all.height - sc.border_down_size, window.all.width / 2, sc.border_down_size);
 	}
+}
 
 
