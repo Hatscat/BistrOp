@@ -58,7 +58,7 @@ function init_darts_confirm_sc () {
 		if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, 0, window.all.height - sc.border_down_size, window.all.width / 2, sc.border_down_size))
 		{
 			window.all.mouse.can_click = false;
-			scenes_transition(window.all.SCENES.FRONT_HOME.ID, window.all.previous_scene);
+			scenes_transition(window.all.SCENES.DARTS_CONFIRM.ID, window.all.previous_scene);
 		}
 		var img_name = "back_mid_0";
 
@@ -66,7 +66,7 @@ function init_darts_confirm_sc () {
 		if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, window.all.width / 2, window.all.height - sc.border_down_size, window.all.width / 2, sc.border_down_size))
 		{
 			window.all.mouse.can_click = false;
-			scenes_transition(window.all.SCENES.FRONT_HOME.ID, window.all.SCENES.DARTS_GAME.ID);
+			scenes_transition(window.all.SCENES.DARTS_CONFIRM.ID, window.all.SCENES.DARTS_GAME.ID);
 		}
 		img_name = "confirm_mid_1"
 		window.all.ctx.drawImage(window.all.imgs["confirm_mid"], window.all.sprites[img_name].x, window.all.sprites[img_name].y, window.all.sprites[img_name].w, window.all.sprites[img_name].h,  window.all.width / 2, window.all.height - sc.border_down_size, window.all.width / 2, sc.border_down_size);
