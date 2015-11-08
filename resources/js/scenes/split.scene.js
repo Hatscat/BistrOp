@@ -155,7 +155,7 @@ function init_split_sc () {
 		if (window.all.mouse.can_click && window.all.mouse.is_down && is_point_inside_box(window.all.mouse, 0, window.all.height - sc.border_down_size, window.all.width / 2, sc.border_down_size))
 		{
 			window.all.mouse.can_click = false;
-			scenes_transition(window.all.SCENES.FRONT_HOME.ID, window.all.SCENES.SHARE.ID);
+			scenes_transition(window.all.SCENES.FRONT_HOME.ID, window.all.SCENES.SHARE.ID, true);
 		}
 		var img_name = "back_mid_0";
 

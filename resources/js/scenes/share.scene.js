@@ -294,7 +294,7 @@ function init_share_sc() {
 				if (window.all.mouse.is_down && window.all.mouse.can_click && is_point_inside_box(window.all.mouse, cx, cy, window.all.width / 3, sc.border_down_size))
 				{
 					window.all.mouse.can_click = false;
-					scenes_transition(window.all.SCENES.SHARE.ID, window.all.SCENES.SPLIT.ID);
+					scenes_transition(window.all.SCENES.SHARE.ID, window.all.SCENES.SPLIT.ID, true 		);
 				}
 			}
 			else
